@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+/*Aboreto*/
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap');
+/*Alegreya Sans SC*/
+
+* {
+    /*configuração universal para todo codigo*/
+
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.header {
+    background-color: white;
+
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    padding: 0 120px;
+
+}
+
+/*estilizar menu*/
+.header {
+    padding: 10px 0px;
+    box-shadow: 5px 5px 10px gray;
+}
+
+.header,
+.header ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.header ul li {
+    padding-right: 32px;
+    font-size: 14px;
+}
+
+.header ul li a {
+    position: relative;
+}
+
+.titulo {
+    width: 32vh;
+}
+
+
+
+.footer {
+    /*rodapé*/
+    height: 120px;
+    width: 100%;
+    background-color: #DF2588;
+
+}
+
+.footer .container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.footer h4 {
+    margin-bottom: 0;
+
+}
