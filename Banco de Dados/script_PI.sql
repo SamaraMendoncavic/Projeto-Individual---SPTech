@@ -19,7 +19,7 @@ CREATE TABLE usuario (
 CREATE TABLE livros (
     idLivros INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45),
-    dt_lancamento VARCHAR(45),
+    dt_lancamento DATE,
     genero VARCHAR(45),
     qtd_pagina INT
 );
