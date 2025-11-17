@@ -40,6 +40,6 @@ CREATE TABLE avaliacao_usuario (
     avaliacao_livro INT,
     CONSTRAINT pkComposta PRIMARY KEY (id_Livros, id_cadastro, id_usuario),
     CONSTRAINT livro_avaliacao FOREIGN KEY (id_Livros) REFERENCES livros(idLivros),
-    CONSTRAINT cadastro_avaliacao FOREIGN KEY (id_cadastro) REFERENCES produto(idCadastro),
-    CONSTRAINT usuario_avaliacao FOREIGN KEY (id_usuario) REFERENCES produto(idUsuario)
+    CONSTRAINT cadastro_avaliacao FOREIGN KEY (id_cadastro) REFERENCES cadastro(idCadastro),
+    CONSTRAINT usuario_avaliacao FOREIGN KEY (id_usuario) REFERENCES usuario(idUsuario)
 );
