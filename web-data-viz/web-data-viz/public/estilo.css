@@ -15,7 +15,8 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; 
+    /* movimento de descer suave */
 }
 
 body {
@@ -347,6 +348,10 @@ e inicia o home parte 2 */
     padding-bottom: 2dvh;
 }
 
+.box_1:hover img {
+    transform: scale(1.1);
+}
+
 .box_1 h4 {
     font-family: Aboreto;
     font-size: 2dvh;
@@ -397,6 +402,10 @@ e inicia o home parte 2 */
     cursor: pointer;
 }
 
+.box_2:hover img {
+    transform: scale(1.1);
+}
+
 .box_3 {
     padding-top: 2dvh;
     width: 35dvh;
@@ -425,6 +434,10 @@ e inicia o home parte 2 */
     border-radius: 10px;
     margin-top: 10px;
     cursor: pointer;
+}
+
+.box_3:hover img {
+    transform: scale(1.1);
 }
 
 /* aqui começa os livros de ficção */
@@ -489,6 +502,10 @@ e inicia o home parte 2 */
     cursor: pointer;
 }
 
+.box_4:hover img {
+    transform: scale(1.1);
+}
+
 .box_5 {
     padding-top: 2dvh;
     width: 35dvh;
@@ -519,6 +536,10 @@ e inicia o home parte 2 */
     cursor: pointer;
 }
 
+.box_5:hover img {
+    transform: scale(1.1);
+}
+
 .box_6 {
     padding-top: 2dvh;
     width: 35dvh;
@@ -547,6 +568,10 @@ e inicia o home parte 2 */
     border-radius: 10px;
     margin-top: 10px;
     cursor: pointer;
+}
+
+.box_6:hover img {
+    transform: scale(1.1);
 }
 
 /* Aqui termina a home 
