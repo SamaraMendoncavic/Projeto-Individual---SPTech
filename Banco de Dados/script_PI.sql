@@ -9,13 +9,6 @@ CREATE TABLE cadastro (
     senha CHAR(8)
 );
 
-CREATE TABLE usuario (
-    idUsuario INT PRIMARY KEY AUTO_INCREMENT,
-    fkCadastro INT,
-    status VARCHAR(45),
-    CONSTRAINT fkUsuario_cadastro FOREIGN KEY (fkCadastro) REFERENCES cadastro(idCadastro)
-);
-
 CREATE TABLE livros (
     idLivros INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45),
@@ -35,11 +28,9 @@ INSERT INTO livros (nome, dt_lancamento, genero, qtd_pagina) VALUES
 CREATE TABLE avaliacao_usuario (
     id_Livros INT,
     id_cadastro INT,
-    id_usuario INT,
     comentario VARCHAR(100),
     avaliacao_livro INT,
     CONSTRAINT pkComposta PRIMARY KEY (id_Livros, id_cadastro, id_usuario),
     CONSTRAINT livro_avaliacao FOREIGN KEY (id_Livros) REFERENCES livros(idLivros),
-    CONSTRAINT cadastro_avaliacao FOREIGN KEY (id_cadastro) REFERENCES cadastro(idCadastro),
-    CONSTRAINT usuario_avaliacao FOREIGN KEY (id_usuario) REFERENCES usuario(idUsuario)
+    CONSTRAINT cadastro_avaliacao FOREIGN KEY (id_cadastro) REFERENCES cadastro(idCadastro)
 );
