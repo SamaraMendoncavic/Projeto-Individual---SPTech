@@ -15,8 +15,7 @@
 }
 
 html {
-    scroll-behavior: smooth; 
-    /* movimento de descer suave */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -155,7 +154,7 @@ body {
 
 .main_text p {
     font-family: Aboreto;
-    margin-bottom: 1dvh;
+    margin-bottom: 15px;
     font-size: 2.5dvh;
     text-align: center;
 }
@@ -305,7 +304,6 @@ e inicia o home parte 2 */
     font-size: 3dvh;
     text-align: center;
 }
-
 /* aqui começa sobre os livros de romance */
 
 .social_2 {
@@ -340,16 +338,12 @@ e inicia o home parte 2 */
 
 .box_1 {
     padding-top: 2dvh;
-    width: 35dvh;
-    height: 50dvh;
+    width: 40dvh;
+    height: 55dvh;
     background-color: #fff;
     justify-items: column;
     text-align: center;
     padding-bottom: 2dvh;
-}
-
-.box_1:hover img {
-    transform: scale(1.1);
 }
 
 .box_1 h4 {
@@ -372,10 +366,18 @@ e inicia o home parte 2 */
     cursor: pointer;
 }
 
+.box_1 button {
+    margin-top: 50px;
+}
+
+.box_1:hover img {
+    transform: scale(1.1);
+}
+
 .box_2 {
     padding-top: 2dvh;
-    width: 35dvh;
-    height: 50dvh;
+    width: 40dvh;
+    height: 55dvh;
     background-color: #fff;
     justify-items: column;
     text-align: center;
@@ -408,8 +410,8 @@ e inicia o home parte 2 */
 
 .box_3 {
     padding-top: 2dvh;
-    width: 35dvh;
-    height: 50dvh;
+    width: 40dvh;
+    height: 55dvh;
     background-color: #fff;
     justify-items: column;
     text-align: center;
@@ -474,8 +476,8 @@ e inicia o home parte 2 */
 
 .box_4 {
     padding-top: 2dvh;
-    width: 35dvh;
-    height: 50dvh;
+    width: 40dvh;
+    height: 55dvh;
     background-color: #fff;
     justify-items: column;
     text-align: center;
@@ -508,8 +510,8 @@ e inicia o home parte 2 */
 
 .box_5 {
     padding-top: 2dvh;
-    width: 35dvh;
-    height: 50dvh;
+    width: 40dvh;
+    height: 55dvh;
     background-color: #fff;
     justify-items: column;
     text-align: center;
@@ -542,8 +544,8 @@ e inicia o home parte 2 */
 
 .box_6 {
     padding-top: 2dvh;
-    width: 35dvh;
-    height: 50dvh;
+    width: 40dvh;
+    height: 55dvh;
     background-color: #fff;
     justify-items: column;
     text-align: center;
@@ -585,7 +587,7 @@ e se inicia a tela de login */
     align-items: center;
     height: 300dvh;
     padding-bottom: 300px;
-    background-image: url('imagens/fundo_4.jpg');
+    background-image: url('imagens/fundo.jpg');
     background-size: cover;
 }
 
@@ -598,8 +600,11 @@ e se inicia a tela de login */
 .card_login {
     width: 40dvh;
     height: 35dvh;
-    background-color: rgba(250, 235, 215, 0.4);
-    border-radius: 10px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 20px;
     display: flex;
     align-items: center;
     color: white;
@@ -608,11 +613,12 @@ e se inicia a tela de login */
 }
 
 .card_login h2 {
-    padding-top: 4dvh;
+    padding-top: 2dvh;
     font-family: Alegreya Sans SC;
     margin: 0;
     font-size: 30px;
 }
+
 
 .cadastro {
     width: 100%;
@@ -621,9 +627,9 @@ e se inicia a tela de login */
     justify-content: center;
     align-items: center;
     height: 300dvh;
-    padding-bottom: 300px;
-    background-image: url('imagens/fundo_4.jpg');
+    padding-bottom: 30dvh;
     background-size: cover;
+    background-image: url('imagens/fundo.jpg');
 }
 
 .cadastro .container {
@@ -635,8 +641,11 @@ e se inicia a tela de login */
 .card_cadastro {
     width: 50dvh;
     height: 54dvh;
-    background-color: rgba(250, 235, 215, 0.4);
-    border-radius: 10px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 20px;
     display: flex;
     align-items: center;
     color: white;
@@ -665,6 +674,10 @@ e se inicia a tela de login */
     font-weight: 800;
 }
 
+.formulario .campo {
+    position: relative;
+}
+
 
 .campo {
     display: flex;
@@ -673,15 +686,31 @@ e se inicia a tela de login */
     padding: 5px 0;
 }
 
+.campo i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
 .campo input {
+    width: 100%;
+    height: 100%;
     padding: 1.3dvh;
-    border-color: #fff;
-    background-color: #fff;
+    background-color: transparent;
     text-align: center;
     border-radius: 2px;
     margin: 0;
     text-align: left;
     border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+}
+
+.campo input::placeholder {
+    color: #fff;
 }
 
 .campo span {
