@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Tempo Real</title>
+    <title>Ali Hazelwood | Dashboard</title>
 
 
     <link rel="stylesheet" href="./../css/dashboards.css">
@@ -22,84 +22,108 @@
 
 <body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
 
-    <div class="janela">
-
-        <div class="header-left dash-header">
-
-            <h1>AquaTech</h1>
-
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+    <body>
+        <div class="header">
+            <div class="logo_wrapper">
+                <img class="logo" width="250vh" height="70vh" src="./../assets/logo_semfundo_site.png" alt="">
             </div>
-
-            <div class="btn-nav">
-                <h3>Aquários</h3>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
+            <ul class="navbar">
+                <li class="agora">
+                    <a href="index.html">HOME</a>
+                </li>
+                <li>
+                    <a href="index.html">ESCRITORA</a>
+                </li>
+                <li>
+                    <a href="">SOBRE MIM</a>
+                </li>
+                <li>
+                    <a href="cadastro.html">PRIMEIRO ACESSO</a>
+                </li>
+            </ul>
+            <button>
+                <a href="login.html">LOGIN</a>
+            </button>
         </div>
 
-        <div class="dash">
-            <div id="alerta">
+        <div class="janela">
+
+            <div class="header-left dash-header">
+
+                <h1>AquaTech</h1>
+
+                <div class="hello">
+                    <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                </div>
+
+                <div class="btn-nav">
+                    <img class="logo" width="250vh" height="70vh" src="./../assets/logo_semfundo_site.png" alt="">
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="./dashboard.html">
+                        <h3>Gráficos</h3>
+                    </a>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="./mural.html">
+                        <h3>Mural de Avisos</h3>
+                    </a>
+                </div>
+
+                <div class="btn-logout" onclick="limparSessao()">
+                    <h3>Sair</h3>
+                </div>
+
             </div>
-            <div class="area-parametros-alerta">
-                <p class="titulo-legenda">
-                    Legenda - Parâmetros para Alertas
-                </p>
-                <div class="parametros-alerta">
-                    <div class="item-regua perigo-frio">
-                        <p>Perigo</p>
-                        <p>&lt;=5°C</p>
-                    </div>
-                    <div class="item-regua alerta-frio">
-                        <p>Alerta</p>
-                        <p>&lt;=10°C</p>
-                    </div>
-                    <div class="item-regua ideal">
-                        <p>Ideal</p>
-                        <p>20°C</p>
-                    </div>
-                    <div class="item-regua alerta-quente">
-                        <p>Alerta</p>
-                        <p>&gt;=22°C</p>
-                    </div>
-                    <div class="item-regua perigo-quente">
-                        <p>Perigo</p>
-                        <p>&gt;=23°C</p>
+
+            <div class="dash">
+                <div id="alerta">
+                </div>
+                <div class="area-parametros-alerta">
+                    <p class="titulo-legenda">
+                        Análise da desempenho dos livros
+                    </p>
+                    <div class="media_avaliação">
+                        <div class="item-regua perigo-frio">
+                            <p>Média de avaliação por livro</p>
+                            <!-- <p>&lt;=5°C</p> -->
+                        </div>
+                        <div class="livro_menorMedia">
+                            <p>Livro com Menor Média</p>
+                            <!-- <p>&lt;=10°C</p> -->
+                        </div>
+                        <!-- <div class="item-regua ideal">
+                            <p>Ideal</p>
+                            <p>20°C</p>
+                        </div>
+                        <div class="item-regua alerta-quente">
+                            <p>Alerta</p>
+                            <p>&gt;=22°C</p>
+                        </div>
+                        <div class="item-regua perigo-quente">
+                            <p>Perigo</p>
+                            <p>&gt;=23°C</p>
+                        </div> -->
                     </div>
                 </div>
-            </div>
 
-            <div class="cards" id="cardAquarios">
+                <div class="cards" id="cardAquarios">
+
+                </div>
 
             </div>
 
         </div>
 
-    </div>
+    </body>
 
-</body>
+    <script>
 
-<script>
-
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
+        function exibirAquarios() {
+            JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
+                document.getElementById("cardAquarios").innerHTML += `
                     <div class="card-aquario">
                         <div class="title-aquario">
                             <h1>${item.descricao}</h1>
@@ -112,9 +136,9 @@
                     </div>
                     </div>
                     `
-        });
-    }
+            });
+        }
 
-</script>
+    </script>
 
 </html>
