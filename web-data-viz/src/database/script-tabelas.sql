@@ -3,12 +3,6 @@
 comandos para mysql server
 */
 
-
-
-/*
-comandos para mysql server
-*/
-
 CREATE DATABASE project_Hazelwood;
 USE project_Hazelwood;
 
@@ -41,10 +35,9 @@ CREATE TABLE avaliacao_usuario (
     id_Livros INT, 
     id_usuario INT,
     comentario VARCHAR(100),
-    avaliacao INT, 
     CONSTRAINT pkComposta PRIMARY KEY (id_Avaliacao, id_Livros, id_usuario),
     CONSTRAINT livro_avaliacao FOREIGN KEY (id_Livros) REFERENCES livros(idLivros),
     CONSTRAINT usuario_avaliacao FOREIGN KEY (id_usuario) REFERENCES usuario(idUsuario)
 );
 
-select * from usuario;
+SELECT * FROM usuario;

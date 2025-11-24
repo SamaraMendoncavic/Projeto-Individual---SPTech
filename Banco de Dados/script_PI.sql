@@ -1,8 +1,8 @@
 CREATE DATABASE project_Hazelwood;
 USE project_Hazelwood;
 
-CREATE TABLE cadastro (
-    idCadastro INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE usuario (
+    idUsuario INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45),
     email VARCHAR(45),
     dtNasc DATE,
@@ -26,11 +26,13 @@ INSERT INTO livros (nome, dt_lancamento, genero, qtd_pagina) VALUES
 ('xeque-mate', '2023-01-01', 'Romance', 336);
 
 CREATE TABLE avaliacao_usuario (
-    id_Livros INT,
-    id_cadastro INT,
+    id_Avaliacao INT,
+    id_Livros INT, 
+    id_usuario INT,
     comentario VARCHAR(100),
-    avaliacao_livro INT,
-    CONSTRAINT pkComposta PRIMARY KEY (id_Livros, id_cadastro, id_usuario),
+    CONSTRAINT pkComposta PRIMARY KEY (id_Avaliacao, id_Livros, id_usuario),
     CONSTRAINT livro_avaliacao FOREIGN KEY (id_Livros) REFERENCES livros(idLivros),
-    CONSTRAINT cadastro_avaliacao FOREIGN KEY (id_cadastro) REFERENCES cadastro(idCadastro)
+    CONSTRAINT usuario_avaliacao FOREIGN KEY (id_usuario) REFERENCES usuario(idUsuario)
 );
+
+SELECT * FROM usuario;
