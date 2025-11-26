@@ -26,11 +26,13 @@ INSERT INTO livros (nome, dt_lancamento, genero, qtd_pagina) VALUES
 ('xeque-mate', '2023-01-01', 'Romance', 336);
 
 CREATE TABLE avaliacao_usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
+	idAvaliacao INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),
 	descricao VARCHAR(150),
 	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+	FOREIGN KEY (fk_usuario) REFERENCES usuario(idUsuario)
 );
 
 SELECT * FROM usuario;
+
+SELECT * FROM avaliacao_usuario;
