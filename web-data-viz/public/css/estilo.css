@@ -249,6 +249,39 @@ body {
     text-align: left;
 }
 
+.sobre_mim .content_mim {
+    width: 100%;
+    padding-top: 15dvh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #FFE169;
+    height: 80dvh;
+}
+
+.sobre_mim .content_mim img {
+    width: 50dvh;
+    padding-bottom: 10dvh;
+
+}
+
+
+.sobre_mim .main_text {
+    font-family: Aboreto;
+}
+
+.sobre_mim .main_text h2 {
+    font-family: Aboreto;
+    font-size: 5dvh;
+    text-align: left;
+}
+
+.sobre_mim .main_text p {
+    font-family: Aboreto;
+    font-size: 2.5dvh;
+    text-align: left;
+}
+
 /* Aqui se finaliza o home parte 1 
 e inicia o home parte 2 */
 
@@ -345,16 +378,11 @@ e inicia o home parte 2 */
     justify-items: column;
     text-align: center;
     padding-bottom: 2dvh;
-    
 }
 
 .box_1 h4 {
     font-family: Aboreto;
     font-size: 2dvh;
-}
-
-.box_1 img {
-    transition: 0.3s;
 }
 
 .box_1 button {
@@ -374,7 +402,6 @@ e inicia o home parte 2 */
 
 .box_1:hover img {
     transform: scale(1.1);
-    transition: 0.3s;
 }
 
 .box_2 {
@@ -409,9 +436,7 @@ e inicia o home parte 2 */
 
 .box_2:hover img {
     transform: scale(1.1);
-    transition: 0.3s;
 }
-
 
 .box_3 {
     padding-top: 2dvh;
@@ -445,7 +470,6 @@ e inicia o home parte 2 */
 
 .box_3:hover img {
     transform: scale(1.1);
-    transition: 0.3s;
 }
 
 /* aqui começa os livros de ficção */
@@ -457,7 +481,6 @@ e inicia o home parte 2 */
     gap: 20px;
     padding: 10px;
     background-color: #B8BEDD;
-    padding-bottom: 15dvh;
 }
 
 .container_3 {
@@ -512,7 +535,6 @@ e inicia o home parte 2 */
 
 .box_4:hover img {
     transform: scale(1.1);
-    transition: 0.3s;
 }
 
 .box_5 {
@@ -547,7 +569,6 @@ e inicia o home parte 2 */
 
 .box_5:hover img {
     transform: scale(1.1);
-    transition: 0.3s;
 }
 
 .box_6 {
@@ -582,7 +603,6 @@ e inicia o home parte 2 */
 
 .box_6:hover img {
     transform: scale(1.1);
-    transition: 0.3s;
 }
 
 /* Aqui começ ao modal e
@@ -629,7 +649,7 @@ termina o index */
 
 .modal_ação {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     margin-top: 4dvh;
 }
 
@@ -650,13 +670,6 @@ termina o index */
     color: white;
 }
 
-#input_comentario {
-    width: 100%;
-    padding: 2dvh;
-    border: 1px solid #ccc;
-    border-radius: 2dvh;
-    box-sizing: border-box;
-}
 
 /* Aqui termina a home 
 e se inicia a tela de login */

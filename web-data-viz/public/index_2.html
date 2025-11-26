@@ -116,12 +116,8 @@
         os dois, desafiando suas teorias sobre o amor e a ciência
       </p>
 
-      <input type="text" id="input_comentario" placeholder="Adicione um comentário...">
-
       <div class="modal_ação">
-        <button class="ação" id="fechar_modal1">Cancelar</button>
-
-        <button class="ação_sucesso">Avaliar</button>
+        <button class="ação_sucesso">Fechar</button>
       </div>
     </div>
   </div>
@@ -141,12 +137,8 @@
         além de abordar questões
         como machismo na ciência e dificuldades financeiras.
 
-        <input type="text" id="input_comentario" placeholder="Adicione um comentário...">
-
       <div class="modal_ação">
-        <button class="ação" id="fechar_modal2">Cancelar</button>
-
-        <button class="ação_sucesso">Avaliar</button>
+        <button class="ação_sucesso">Fechar</button>
       </div>
     </div>
   </div>
@@ -166,12 +158,8 @@
         atraída por ele e percebe que o esporte pode
         ser sua chance de ganhar prêmios e que a competição vai além do tabuleiro.
 
-        <input type="text" id="input_comentario" placeholder="Adicione um comentário...">
-
       <div class="modal_ação">
-        <button class="ação" id="fechar_modal3">Cancelar</button>
-
-        <button class="ação_sucesso">Avaliar</button>
+        <button class="ação_sucesso">Fechar</button>
       </div>
     </div>
   </div>
@@ -192,12 +180,8 @@
         do que o planejado,
         pois a atração real começa a crescer entre eles.
 
-        <input type="text" id="input_comentario" placeholder="Adicione um comentário...">
-
       <div class="modal_ação">
-        <button class="ação" id="fechar_modal4">Cancelar</button>
-
-        <button class="ação_sucesso">Avaliar</button>
+        <button class="ação_sucesso">Fechar</button>
       </div>
     </div>
   </div>
@@ -221,9 +205,7 @@
       <input type="text" id="input_comentario" placeholder="Adicione um comentário...">
 
       <div class="modal_ação">
-        <button class="ação" id="fechar_modal5">Cancelar</button>
-
-        <button class="ação_sucesso">Avaliar</button>
+        <button class="ação_sucesso">Fechar</button>
       </div>
     </div>
   </div>
@@ -243,9 +225,7 @@
       <input type="text" id="input_comentario" placeholder="Adicione um comentário...">
 
       <div class="modal_ação">
-        <button class="ação" id="fechar_modal6">Cancelar</button>
-
-        <button class="ação_sucesso">Avaliar</button>
+        <button class="ação_sucesso">Fechar</button>
       </div>
     </div>
   </div>`
@@ -294,12 +274,11 @@
     // Verifica se o modal existe e muda seu estilo para 'flex' (ou 'block')
     if (modal) {
       modal.style.display = 'flex';
-    } else {
-      console.error(`Erro: Modal com ID "${idDoModal}" não encontrado.`);
     }
   }
 
   // função genérica que é usada para todas as função no HTML, para não criar seis funções
+  // udando o 
 
   function fecharModal(idDoModal) {
     // Obtém o elemento modal do DOM
@@ -308,20 +287,8 @@
     // ver se o modal existe e muda seu estilo para 'none'
     if (modal) {
       modal.style.display = 'none';
-    } else {
-      console.error(`Erro: Modal com ID "${idDoModal}" não encontrado.`);
-    }
+    } 
   }
-
-  // adiciona listener para fechar o modal ao clicar no fundo (em qualquer parte da página)
-  document.querySelectorAll('.modal').forEach(modal => {
-    modal.addEventListener('click', (event) => {
-      // verifica se o clique do usuário foi exatamente no fundo do modal (e não no modal_body)
-      if (event.target === modal) {
-        fecharModal(modal.id);
-      }
-    });
-  });
 
 
 </script>
