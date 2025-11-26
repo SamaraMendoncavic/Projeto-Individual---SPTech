@@ -9,7 +9,7 @@ function listar(req, res) {
         }
     }).catch(function (erro) {
         console.log(erro);
-        console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        console.log("Houve um erro ao buscar os avaliação: ", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
 }
@@ -90,9 +90,9 @@ function publicar(req, res) {
 
 function editar(req, res) {
     var novaDescricao = req.body.descricao;
-    var idAviso = req.params.idAviso;
+    var idAvaliacao = req.params.idAvaliacao;
 
-    avisoModel.editar(novaDescricao, idAviso)
+    avisoModel.editar(novaDescricao, idAvaliacao)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -109,9 +109,9 @@ function editar(req, res) {
 }
 
 function deletar(req, res) {
-    var idAviso = req.params.idAviso;
+    var idAvaliacao = req.params.idAvaliacao;
 
-    avisoModel.deletar(idAviso)
+    avisoModel.deletar(idAvaliacao)
         .then(
             function (resultado) {
                 res.json(resultado);

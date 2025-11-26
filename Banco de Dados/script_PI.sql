@@ -26,13 +26,11 @@ INSERT INTO livros (nome, dt_lancamento, genero, qtd_pagina) VALUES
 ('xeque-mate', '2023-01-01', 'Romance', 336);
 
 CREATE TABLE avaliacao_usuario (
-    id_Avaliacao INT,
-    id_Livros INT, 
-    id_usuario INT,
-    comentario VARCHAR(100),
-    CONSTRAINT pkComposta PRIMARY KEY (id_Avaliacao, id_Livros, id_usuario),
-    CONSTRAINT livro_avaliacao FOREIGN KEY (id_Livros) REFERENCES livros(idLivros),
-    CONSTRAINT usuario_avaliacao FOREIGN KEY (id_usuario) REFERENCES usuario(idUsuario)
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	titulo VARCHAR(100),
+	descricao VARCHAR(150),
+	fk_usuario INT,
+	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 );
 
 SELECT * FROM usuario;

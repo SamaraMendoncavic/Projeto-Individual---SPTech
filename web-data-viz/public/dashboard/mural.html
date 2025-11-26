@@ -21,38 +21,37 @@
 
 <body onload="validarSessao(), atualizarFeed()" style="background-color: #161618;">
 
-    <div class="janela">
+    <<div class="janela">
 
+            <div class="header-left dash-header">
 
-        <div class="header-left">
+                <h1>ALI HAZELWOOD</h1>
 
-            <h1>AquaTech</h1>
+                <div class="hello">
+                    <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                </div>
 
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                <div class="btn-nav">
+                    <img class="logo" width="250vh" height="70vh" src="./../assets/logo_semfundo_site.png" alt="">
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="./dashboard.html">
+                        <h3>Gráficos</h3>
+                    </a>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="./mural.html">
+                        <h3>Mural de Avisos</h3>
+                    </a>
+                </div>
+
+                <div class="btn-logout" onclick="limparSessao()">
+                    <h3>Sair</h3>
+                </div>
+
             </div>
-
-            <div class="btn-nav-white">
-                <a href="cards.html">
-                    <h3>Aquários</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav">
-                <h3>Mural de Avisos</h3>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
-        </div>
 
         <div class="dash-right">
 
@@ -143,17 +142,17 @@
 
     }
 
-    function editar(idAviso) {
-        sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
-        console.log("cliquei em editar - " + idAviso);
-        window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAviso);
+    function editar(idAvaliacao) {
+        sessionStorage.ID_POSTAGEM_EDITANDO = idAvaliacao;
+        console.log("cliquei em editar - " + idAvaliacao);
+        window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAvaliacao);
         window.location = "/dashboard/edicao-aviso.html"
 
     }
 
-    function deletar(idAviso) {
-        console.log("Criar função de apagar post escolhido - ID" + idAviso);
-        fetch(`/avisos/deletar/${idAviso}`, {
+    function deletar(idAvaliacao) {
+        console.log("Criar função de apagar post escolhido - ID" + idAvaliacao);
+        fetch(`/avisos/deletar/${idAvaliacao}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
@@ -203,7 +202,7 @@
                         var btnDeletar = document.createElement("button");
 
 
-                        spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
+                        spanID.innerHTML = "ID: <b>" + publicacao.idAvaliacao + "</b>";
                         spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
                         spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
@@ -211,7 +210,7 @@
                         btnDeletar.innerHTML = "Deletar";
 
                         divPublicacao.className = "publicacao";
-                        spanTitulo.id = "inputNumero" + publicacao.idAviso;
+                        spanTitulo.id = "inputNumero" + publicacao.idAvaliacao;
                         spanNome.className = "publicacao-nome";
                         spanTitulo.className = "publicacao-titulo";
                         divDescricao.className = "publicacao-descricao";
@@ -219,12 +218,12 @@
                         divButtons.className = "div-buttons"
 
                         btnEditar.className = "publicacao-btn-editar"
-                        btnEditar.id = "btnEditar" + publicacao.idAviso;
-                        btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
+                        btnEditar.id = "btnEditar" + publicacao.idAvaliacao;
+                        btnEditar.setAttribute("onclick", `editar(${publicacao.idAvaliacao})`);
 
                         btnDeletar.className = "publicacao-btn-editar"
-                        btnDeletar.id = "btnDeletar" + publicacao.idAviso;
-                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
+                        btnDeletar.id = "btnDeletar" + publicacao.idAvaliacao;
+                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAvaliacao})`);
 
                         divPublicacao.appendChild(spanID);
                         divPublicacao.appendChild(spanNome);
