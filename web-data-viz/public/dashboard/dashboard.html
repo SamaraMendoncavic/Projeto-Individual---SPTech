@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ali Hazelwood | Dashboards</title>
 
-    
+
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
     <script src="../js/sessao.js"></script>
@@ -39,6 +39,12 @@
             </div>
 
             <div class="btn-nav-white">
+                <a href="./mural.html">
+                    <h3>Comunidade</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
                 <a href="./cards.html">
                     <h3>Analise de Desempenho</h3>
                 </a>
@@ -48,12 +54,6 @@
 
                 <h3>Gráficos</h3>
 
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Comunidade</h3>
-                </a>
             </div>
 
             <div class="btn-logout" onclick="limparSessao()">
@@ -80,6 +80,7 @@
 </html>
 
 <script>
+
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     let proximaAtualizacao;

@@ -24,25 +24,11 @@
 
     <div class="janela">
 
-        <div class="header-left dash-header">
-
+        <div class="header-left">
             <img class="logo" width="250vh" height="70vh" src="./../assets/logo_semfundo_site.png" alt="">
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
-
-            <div class="btn-nav">
-                <a href="./cards.html">
-                    <h3>Analise de Desempenho</h3>
-                </a>
-
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Gráficos</h3>
-                </a>
             </div>
 
             <div class="btn-nav-white">
@@ -51,12 +37,23 @@
                 </a>
             </div>
 
+            <div class="btn-nav-white">
+                <a href="./cards.html">
+                    <h3>Analise de Desempenho</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav">
+
+                <h3>Gráficos</h3>
+
+            </div>
+
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div>
 
         </div>
-
         <div class="dash">
             <div id="alerta">
             </div>
@@ -66,24 +63,12 @@
                 </p>
                 <div class="parametros-alerta">
                     <div class="item-regua perigo-frio">
-                        <p>Perigo</p>
+                        <p>Idade média dos usuários</p>
                         <p>&lt;=5°C</p>
                     </div>
                     <div class="item-regua alerta-frio">
-                        <p>Alerta</p>
+                        <p>Quantidade de comentários</p>
                         <p>&lt;=10°C</p>
-                    </div>
-                    <div class="item-regua ideal">
-                        <p>Ideal</p>
-                        <p>20°C</p>
-                    </div>
-                    <div class="item-regua alerta-quente">
-                        <p>Alerta</p>
-                        <p>&gt;=22°C</p>
-                    </div>
-                    <div class="item-regua perigo-quente">
-                        <p>Perigo</p>
-                        <p>&gt;=23°C</p>
                     </div>
                 </div>
             </div>
@@ -100,23 +85,23 @@
 
 <script>
 
-    // function exibirAquarios() {
-    //     JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-    //         document.getElementById("cardAquarios").innerHTML += `
-    //                 <div class="card-aquario">
-    //                     <div class="title-aquario">
-    //                         <h1>${item.descricao}</h1>
-    //                     </div>
-    //                     <div class="desc-aquario">
-    //                     <div class="temperatura">
-    //                         <p id="temp_aquario_${item.id}">-°C</p>
-    //                     </div>
-    //                     <div class="cor-alerta" id="card_${item.id}"></div>
-    //                 </div>
-    //                 </div>
-    //                 `
-    //     });
-    // }
+    function exibirAquarios() {
+        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
+            document.getElementById("cardAquarios").innerHTML += `
+                    <div class="card-aquario">
+                        <div class="title-aquario">
+                            <h1>${item.descricao}</h1>
+                        </div>
+                        <div class="desc-aquario">
+                        <div class="temperatura">
+                            <p id="temp_aquario_${item.id}">-°C</p>
+                        </div>
+                        <div class="cor-alerta" id="card_${item.id}"></div>
+                    </div>
+                    </div>
+                    `
+        });
+    }
 
 </script>
 

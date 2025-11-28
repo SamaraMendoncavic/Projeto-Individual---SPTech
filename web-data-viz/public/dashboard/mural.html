@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ali Hazelwood | Dashboard</title>
 
-    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/dashboards.css"> 
     <link rel="stylesheet" href="./../css/estilo.css" />
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
@@ -21,43 +21,43 @@
 
 <body onload="validarSessao(), atualizarFeed()" style="background-color: #161618;">
 
-    <<div class="janela">
+<div class="janela">
 
-            <div class="header-left dash-header">
+        <div class="header-left">
+            <img class="logo" width="250vh" height="70vh" src="./../assets/logo_semfundo_site.png" alt="">
 
-                <h1>ALI HAZELWOOD</h1>
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
 
-                <div class="hello">
-                    <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-                </div>
+            <div class="btn-nav-white">
+                <a href="./mural.html">
+                    <h3>Comunidade</h3>
+                </a>
+            </div>
 
-                <div class="btn-nav">
-                    <a href="./cards.html"></a>
-                     <h3>Analise de Desempenho</h3>
-                </div>
+            <div class="btn-nav-white">
+                <a href="./cards.html">
+                    <h3>Analise de Desempenho</h3>
+                </a>
+            </div>
 
-                <div class="btn-nav-white">
-                    <a href="./dashboard.html">
-                        <h3>Gráficos</h3>
-                    </a>
-                </div>
+            <div class="btn-nav">
 
-                <div class="btn-nav-white">
-                    <a href="./mural.html">
-                        <h3>Comunidade</h3>
-                    </a>
-                </div>
-
-                <div class="btn-logout" onclick="limparSessao()">
-                    <h3>Sair</h3>
-                </div>
+                <h3>Gráficos</h3>
 
             </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
 
         <div class="dash-right">
 
 
-            <div class="avisos">
+            <div class="avaliação">
                 <div id="alerta">
                 </div>
                 <div class="container">
@@ -67,14 +67,14 @@
                             <label>
                                 Título:
                                 <br>
-                                <input name="titulo" id="titulo" maxlength="100" type="text">
+                                <input name="titulo" id="titulo" maxlength="100" type="text" placeholder="Coloque aqui o nome do livro...">
                             </label>
                             <br>
                             <br>
                             <label>
                                 Descrição (máximo de 250 caracteres):
                                 <br>
-                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
+                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5" placeholder="Coloque aqui sua resenha sobre ele..."></textarea>
                             </label>
                             <br>
                             <br>
@@ -99,7 +99,7 @@
 </html>
 
 <script>
-    
+
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     function limparFormulario() {
