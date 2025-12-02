@@ -27,4 +27,17 @@ router.delete("/deletar/:idAvaliacao", function (req, res) {
     avisoController.deletar(req, res);
 });
 
+router.get("/contagem", function (req, res) {
+    avisoController.buscarContagemComentarios(req, res); // nova rota para o gráfico
+});
+
+router.get("/quantidade", function (req, res) {
+    avisoController.buscarQuantidadeComentario(req, res); // KPI de quantidade comentários
+});
+
+router.get("/idade", function (req, res) {
+    avisoController.buscarIdadeUsuario(req, res); // KPI idade média de usuários
+});
+
+
 module.exports = router;

@@ -126,11 +126,59 @@ function deletar(req, res) {
         );
 }
 
+function buscarContagemComentarios(req, res) {
+    avisoModel.buscarContagemPorData()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhuma contagem de comentários encontrada!");
+            }
+        })
+        .catch(function (erro) {
+            console.log("Houve um erro ao buscar a contagem de comentários: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
+function buscarQuantidadeComentario(req, res) {
+    avisoModel.buscarQuantidadeComentario()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhuma quantidade de comentários encontrada!");
+            }
+        })
+        .catch(function (erro) {
+            console.log("Houve um erro ao buscar a contagem de comentários: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
+function buscarIdadeUsuario(req, res) {
+    avisoModel.buscarIdadeUsuario()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhuma quantidade de comentários encontrada!");
+            }
+        })
+        .catch(function (erro) {
+            console.log("Houve um erro ao buscar a contagem de comentários: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
 module.exports = {
     listar,
     listarPorUsuario,
     pesquisarDescricao,
     publicar,
     editar,
-    deletar
+    deletar,
+    buscarContagemComentarios,
+    buscarQuantidadeComentario,
+    buscarIdadeUsuario
 }

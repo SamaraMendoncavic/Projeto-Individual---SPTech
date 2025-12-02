@@ -37,16 +37,16 @@
                 </a>
             </div>
 
-            <div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>Analise de Desempenho</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav">
+            <!-- <div class="btn-nav">
 
                 <h3>Gráficos</h3>
 
+            </div> -->
+
+            <div class="btn-nav-white">
+                <a href="./dashboard.html">
+                    <h3>Analise de Desempenho</h3>
+                </a>
             </div>
 
             <div class="btn-logout" onclick="limparSessao()">
@@ -54,30 +54,7 @@
             </div>
 
         </div>
-        <div class="dash">
-            <div id="alerta">
-            </div>
-            <div class="area-parametros-alerta">
-                <p class="titulo-legenda">
-                    Legenda - Parâmetros para Alertas
-                </p>
-                <div class="parametros-alerta">
-                    <div class="item-regua perigo-frio">
-                        <p>Idade média dos usuários</p>
-                        <p>&lt;=5°C</p>
-                    </div>
-                    <div class="item-regua alerta-frio">
-                        <p>Quantidade de comentários</p>
-                        <p>&lt;=10°C</p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="cards" id="cardAquarios">
-
-            </div>
-
-        </div>
 
     </div>
 
@@ -85,24 +62,7 @@
 
 <script>
 
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
-                    <div class="card-aquario">
-                        <div class="title-aquario">
-                            <h1>${item.descricao}</h1>
-                        </div>
-                        <div class="desc-aquario">
-                        <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
-                        </div>
-                        <div class="cor-alerta" id="card_${item.id}"></div>
-                    </div>
-                    </div>
-                    `
-        });
-    }
-
 </script>
+
 
 </html>

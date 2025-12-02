@@ -26,13 +26,20 @@ INSERT INTO livros (nome, dt_lancamento, genero, qtd_pagina) VALUES
 ('xeque-mate', '2023-01-01', 'Romance', 336);
 
 CREATE TABLE avaliacao_usuario (
-	idAvaliacao INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(idUsuario)
+    idAvaliacao INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(100),
+    descricao VARCHAR(255),
+    dt_avaliacao DATETIME DEFAULT CURRENT_TIMESTAMP, 
+    fk_usuario INT,
+    FOREIGN KEY (fk_usuario) REFERENCES usuario(idUsuario),
 );
 
 SELECT * FROM usuario;
 
 SELECT * FROM avaliacao_usuario;
+
+SELECT DATE_FORMAT(dt_avaliacao, '%Y-%m-%d') AS data_comentario,
+       COUNT(idAvaliacao) AS total_comentarios
+       FROM avaliacao_usuario
+       GROUP BY data_comentario
+       ORDER BY data_comentario;

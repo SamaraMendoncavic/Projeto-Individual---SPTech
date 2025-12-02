@@ -89,11 +89,45 @@ function deletar(idAvaliacao) {
     return database.executar(instrucaoSql);
 }
 
+function buscarContagemPorData() {
+    var instrucaoSql = `
+        SELECT DATE_FORMAT(dt_avaliacao, '%d-%m-%Y') AS data_comentario,
+               COUNT(idAvaliacao) AS total_comentarios
+               FROM avaliacao_usuario
+               GROUP BY data_comentario
+               ORDER BY data_comentario DESC;
+    `;
+    console.log("Executando a instrução SQL para contagem de comentários: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function buscarQuantidadeComentario() {
+    var instrucaoSql = `
+    SELECT COUNT(idAvaliacao) AS total_comentarios
+       FROM avaliacao_usuario;`;
+
+    console.log("Executando a instrução SQL para contagem de comentários: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function buscarIdadeUsuario() {
+    var instrucaoSql = `
+    SELECT ROUND(AVG(TIMESTAMPDIFF(YEAR, dtNasc, CURDATE())),0) AS Idade_Usuarios
+           FROM usuario;`;
+
+    console.log("Executando a instrução SQL para contagem de comentários: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
 module.exports = {
     listar,
     listarPorUsuario,
     pesquisarDescricao,
     publicar,
     editar,
-    deletar
+    deletar,
+    buscarContagemPorData,
+    buscarQuantidadeComentario,
+    buscarIdadeUsuario
 }
