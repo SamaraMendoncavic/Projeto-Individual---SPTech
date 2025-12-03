@@ -79,11 +79,6 @@
             <button class="botao" onclick="cadastrar()">Entrar</button>
           </div>
 
-          <!-- <div id="div_aguardar" class="loading-div">
-            <img src="./assets/circle-loading.gif" id="loading-gif">
-          </div>
-
-          <div id="div_erros_login"></div> -->
         </div>
       </div>
     </div>
@@ -96,13 +91,13 @@
             <a href="homepage.html">HOME</a>
           </li>
           <li>
-            <a href="">ESCRITORA</a>
+            <a href="index.html#id_escritora">ESCRITORA</a>
           </li>
           <li>
             <a href="">SOBRE MIM</a>
           </li>
           <li>
-            <a href="">ANALISE DE DESEMPENHO</a>
+            <a href="cadastro.html">ANALISE DE DESEMPENHO</a>
           </li>
           <li>
             <a href="cadastro.html">PRIMEIRO ACESSO</a>
@@ -137,9 +132,6 @@
     var emailVar = email_input.value;
     var dtNascVar = dtNasc_input.value;
     var senhaVar = senha_input.value;
-    // var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    // var codigoVar = codigo_input.value;
-    // var idEmpresaVincular
 
     // Verificando se há algum campo em branco
     if (
@@ -159,19 +151,6 @@
     // } else {
     //   setInterval(sumirMensagem, 5000);
     }
-
-    // Verificando se o código de ativação é de alguma empresa cadastrada
-    // for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
-    //   if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
-    //     idEmpresaVincular = listaEmpresasCadastradas[i].id
-    //     console.log("Código de ativação válido.");
-    //     break;
-    //   } else {
-    //     cardErro.style.display = "block";
-    //     mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
-    //     finalizarAguardar();
-    //   }
-    // }
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -214,28 +193,4 @@
 
     return false;
   }
-
-  // Listando empresas cadastradas 
-  // function listar() {
-  //   fetch("/empresas/listar", 
-  //     method: "GET",
-  //   })
-  //     .then(function (resposta) {
-  //       resposta.json().then((empresas) => {
-  //         empresas.forEach((empresa) => {
-  //           listaEmpresasCadastradas.push(empresa);
-
-  //           console.log("listaEmpresasCadastradas")
-  //           console.log(listaEmpresasCadastradas[0].codigo_ativacao)
-  //         });
-  //       });
-  //     })
-  //     .catch(function (resposta) {
-  //       console.log(`#ERRO: ${resposta}`);
-  //     });
-  // }
-
-  // function sumirMensagem() {
-  //   cardErro.style.display = "none";
-  // }
 </script>
