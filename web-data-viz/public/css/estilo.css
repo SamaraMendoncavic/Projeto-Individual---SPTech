@@ -32,6 +32,7 @@ body {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     font-family: 'Alegreya Sans SC';
     position: fixed;
+    z-index: 2;
     background-color: rgba(255, 255, 255, 0.8);
     width: 100%;
 
@@ -171,6 +172,10 @@ body {
     border-radius: 10px;
     margin-top: 10px;
     cursor: pointer;
+}
+
+.button_livros a {
+    color: #FFFAF1;
 }
 
 /* aqui começa sobre o site */
@@ -402,6 +407,7 @@ e inicia o home parte 2 */
 
 .box_1:hover img {
     transform: scale(1.1);
+    transition: 0.3s;
 }
 
 .box_2 {
@@ -436,6 +442,7 @@ e inicia o home parte 2 */
 
 .box_2:hover img {
     transform: scale(1.1);
+    transition: 0.3s;
 }
 
 .box_3 {
@@ -470,6 +477,7 @@ e inicia o home parte 2 */
 
 .box_3:hover img {
     transform: scale(1.1);
+    transition: 0.3s;
 }
 
 /* aqui começa os livros de ficção */
@@ -535,6 +543,7 @@ e inicia o home parte 2 */
 
 .box_4:hover img {
     transform: scale(1.1);
+    transition: 0.3s;
 }
 
 .box_5 {
@@ -569,6 +578,7 @@ e inicia o home parte 2 */
 
 .box_5:hover img {
     transform: scale(1.1);
+    transition: 0.3s;
 }
 
 .box_6 {
@@ -603,9 +613,10 @@ e inicia o home parte 2 */
 
 .box_6:hover img {
     transform: scale(1.1);
+    transition: 0.3s;
 }
 
-/* Aqui começ ao modal e
+/* Aqui começa o modal e
 termina o index */
 .modal {
     position: fixed;
@@ -676,7 +687,7 @@ e se inicia a tela de login */
 
 .login {
     width: 100%;
-    padding-top: 300px;
+    padding-top: 30dvh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -716,12 +727,12 @@ e se inicia a tela de login */
 
 .cadastro {
     width: 100%;
-    padding-top: 300px;
+    padding-top: 25dvh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300dvh;
-    padding-bottom: 300px;
+    /* height: 300dvh; */
+    padding-bottom: 20dvh;
     background-size: cover;
 }
 
@@ -781,7 +792,7 @@ e se inicia a tela de login */
 
 .campo i {
     position: absolute;
-    right: 20px;
+    right: 11px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
@@ -800,6 +811,7 @@ e se inicia a tela de login */
     outline: none;
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 40px;
+    color: white;
 }
 
 .campo input::placeholder {
