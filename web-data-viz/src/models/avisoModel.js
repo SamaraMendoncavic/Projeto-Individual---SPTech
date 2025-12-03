@@ -95,7 +95,7 @@ function buscarContagemPorData() {
                COUNT(idAvaliacao) AS total_comentarios
                FROM avaliacao_usuario
                GROUP BY data_comentario
-               ORDER BY data_comentario DESC;
+               ORDER BY data_comentario ASC;
     `;
     console.log("Executando a instrução SQL para contagem de comentários: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
