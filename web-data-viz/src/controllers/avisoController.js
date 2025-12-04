@@ -1,5 +1,6 @@
 var avisoModel = require("../models/avisoModel");
 
+// realiza a listagem das publicações
 function listar(req, res) {
     avisoModel.listar().then(function (resultado) {
         if (resultado.length > 0) {
@@ -14,6 +15,7 @@ function listar(req, res) {
     });
 }
 
+// realiza a listagem das publicações por usuário
 function listarPorUsuario(req, res) {
     var idUsuario = req.params.idUsuario;
 
@@ -39,6 +41,7 @@ function listarPorUsuario(req, res) {
         );
 }
 
+// Plota a descrição que o usuário colocou na tela
 function pesquisarDescricao(req, res) {
     var descricao = req.params.descricao;
 
@@ -60,6 +63,7 @@ function pesquisarDescricao(req, res) {
         );
 }
 
+// realiza a publicação do comentário com base do id do usuário
 function publicar(req, res) {
     var titulo = req.body.titulo;
     var descricao = req.body.descricao;
@@ -88,44 +92,7 @@ function publicar(req, res) {
     }
 }
 
-function editar(req, res) {
-    var novaDescricao = req.body.descricao;
-    var idAvaliacao = req.params.idAvaliacao;
-
-    avisoModel.editar(novaDescricao, idAvaliacao)
-        .then(
-            function (resultado) {
-                res.json(resultado);
-            }
-        )
-        .catch(
-            function (erro) {
-                console.log(erro);
-                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
-                res.status(500).json(erro.sqlMessage);
-            }
-        );
-
-}
-
-function deletar(req, res) {
-    var idAvaliacao = req.params.idAvaliacao;
-
-    avisoModel.deletar(idAvaliacao)
-        .then(
-            function (resultado) {
-                res.json(resultado);
-            }
-        )
-        .catch(
-            function (erro) {
-                console.log(erro);
-                console.log("Houve um erro ao deletar o post: ", erro.sqlMessage);
-                res.status(500).json(erro.sqlMessage);
-            }
-        );
-}
-
+// verifica a quantidade de comentários para o KPI
 function buscarContagemComentarios(req, res) {
     avisoModel.buscarContagemPorData()
         .then(function (resultado) {
@@ -141,6 +108,7 @@ function buscarContagemComentarios(req, res) {
         });
 }
 
+// verifica a quantidade de comentários para o KPI
 function buscarQuantidadeComentario(req, res) {
     avisoModel.buscarQuantidadeComentario()
         .then(function (resultado) {
@@ -156,6 +124,7 @@ function buscarQuantidadeComentario(req, res) {
         });
 }
 
+// verifica a idade média de nossos usuários para o KPI
 function buscarIdadeUsuario(req, res) {
     avisoModel.buscarIdadeUsuario()
         .then(function (resultado) {
@@ -176,8 +145,6 @@ module.exports = {
     listarPorUsuario,
     pesquisarDescricao,
     publicar,
-    editar,
-    deletar,
     buscarContagemComentarios,
     buscarQuantidadeComentario,
     buscarIdadeUsuario

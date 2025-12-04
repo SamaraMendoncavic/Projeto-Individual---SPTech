@@ -166,7 +166,7 @@
 
                         // criando e manipulando elementos do HTML via JavaScript
                         var divPublicacao = document.createElement("div");
-                        var spanID = document.createElement("span");
+                        // var spanID = document.createElement("span");
                         var spanTitulo = document.createElement("span");
                         var spanNome = document.createElement("span");
                         var divDescricao = document.createElement("div");
@@ -177,19 +177,20 @@
                         divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
 
                         divPublicacao.className = "publicacao";
-                        spanTitulo.id = "inputNumero" + publicacao.idAvaliacao;
+                        // spanTitulo.id = "inputNumero" + publicacao.idAvaliacao;
                         spanNome.className = "publicacao-nome";
                         spanTitulo.className = "publicacao-titulo";
                         divDescricao.className = "publicacao-descricao";
 
                         divButtons.className = "div-buttons"
 
-                        divPublicacao.appendChild(spanID);
+                        // appendChild permite que você adicione elementos na página em tempo de execução
+                       // divPublicacao.appendChild(spanID);
                         divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(spanTitulo);
                         divPublicacao.appendChild(divDescricao);
                         divPublicacao.appendChild(divButtons);
-                        
+
                         feed.appendChild(divPublicacao);
                     }
 

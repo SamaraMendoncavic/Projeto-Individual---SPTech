@@ -1,5 +1,6 @@
 var database = require("../database/config");
 
+// realiza a listagem das publicações
 function listar() {
     console.log("ACESSEI O avaliacao_usuario  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucaoSql = `
@@ -20,6 +21,7 @@ function listar() {
     return database.executar(instrucaoSql);
 }
 
+// Plota a descrição que o usuário colocou na tela
 function pesquisarDescricao(texto) {
     console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function pesquisarDescricao()");
     var instrucaoSql = `
@@ -41,6 +43,7 @@ function pesquisarDescricao(texto) {
     return database.executar(instrucaoSql);
 }
 
+// realiza a listagem das publicações por usuário
 function listarPorUsuario(idUsuario) {
     console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarPorUsuario()");
     var instrucaoSql = `
@@ -62,6 +65,7 @@ function listarPorUsuario(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
+// realiza a publicação do comentário com base do id do usuário
 function publicar(titulo, descricao, idUsuario) {
     console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", titulo, descricao, idUsuario);
     var instrucaoSql = `
@@ -71,24 +75,7 @@ function publicar(titulo, descricao, idUsuario) {
     return database.executar(instrucaoSql);
 }
 
-function editar(novaDescricao, idAvaliacao) {
-    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function editar(): ", novaDescricao, idAvaliacao);
-    var instrucaoSql = `
-        UPDATE avaliacao_usuario SET descricao = '${novaDescricao}' WHERE idAvaliacao = ${idAvaliacao};
-    `;
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
-}
-
-function deletar(idAvaliacao) {
-    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function deletar():", idAvaliacao);
-    var instrucaoSql = `
-        DELETE FROM avaliacao_usuario WHERE idAvalicao = ${idAvaliacao};
-    `;
-    console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
-}
-
+// realiza a contagem de comentários para o gráfico
 function buscarContagemPorData() {
     var instrucaoSql = `
         SELECT DATE_FORMAT(dt_avaliacao, '%d-%m-%Y') AS data_comentario,
@@ -101,6 +88,7 @@ function buscarContagemPorData() {
     return database.executar(instrucaoSql);
 }
 
+// verifica a quantidade de comentários para o KPI
 function buscarQuantidadeComentario() {
     var instrucaoSql = `
     SELECT COUNT(idAvaliacao) AS total_comentarios
@@ -110,6 +98,7 @@ function buscarQuantidadeComentario() {
     return database.executar(instrucaoSql);
 }
 
+// verifica a idade média de nossos usuários para o KPI
 function buscarIdadeUsuario() {
     var instrucaoSql = `
     SELECT ROUND(AVG(TIMESTAMPDIFF(YEAR, dtNasc, CURDATE())),0) AS Idade_Usuarios
@@ -125,8 +114,6 @@ module.exports = {
     listarPorUsuario,
     pesquisarDescricao,
     publicar,
-    editar,
-    deletar,
     buscarContagemPorData,
     buscarQuantidadeComentario,
     buscarIdadeUsuario

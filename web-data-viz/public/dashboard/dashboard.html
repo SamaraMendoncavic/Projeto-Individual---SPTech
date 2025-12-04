@@ -95,6 +95,7 @@
 
     window.onload = exibirGraficoComentarios();
 
+    // Usada para exibir od gráficos
     function exibirGraficoComentarios() {
         document.getElementById("graficoComentariosDiv").innerHTML += `
                 <div id="graficoComentariosDiv" class="display-block">
@@ -107,6 +108,7 @@
                 </div>
             `
 
+        // assim que é executada chama as seguintes funções
         obterDadosComentarios()
         obterQuantidadeComentarios()
         obterIdadeUsuario()
@@ -126,12 +128,13 @@
 
     var myChartComentarios; // variavel global para o gráfico de comentários
 
+    // realiza a obtenção de dados do Banco
     function obterDadosComentarios() {
         // chamar a nova rota - avisos e contagem
         fetch("/avisos/contagem", { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
-                    plotarGraficoComentarios(resposta);
+                    plotarGraficoComentarios(resposta); // assim que executada chama a função para plotar o gráfico
                 });
             } else {
                 console.error('Nenhum dado de comentário encontrado para o gráfico.');
@@ -139,6 +142,7 @@
         });
     }
 
+    // função do KPI que realiza a contagem da quantidade de comentários
     function obterQuantidadeComentarios() {
         // chamar a nova rota - avisos e quantidadde
         fetch("/avisos/quantidade", { cache: 'no-store' }).then(function (response) {
@@ -160,6 +164,7 @@
         });
     }
 
+    // função do KPI que realiza a contagem da idade média dos usuários
     function obterIdadeUsuario() {
         // chamar a nova rota - avisos e idade
         fetch("/avisos/idade", { cache: 'no-store' }).then(function (response) {
@@ -180,7 +185,8 @@
             }
         });
     }
-
+    
+    // Realiza a plotagem do gráfico, trazendo os dados e realizando o push quando surgir outro
     function plotarGraficoComentarios(resposta) {
 
         let labels = [];
