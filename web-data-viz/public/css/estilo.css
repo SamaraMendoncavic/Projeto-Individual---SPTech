@@ -229,12 +229,11 @@ body {
     align-items: center;
     background-color: #99C1B9;
     height: 80dvh;
+    padding-bottom: 10dvh;
 }
 
 .sobre .content_escritora img {
     width: 50dvh;
-    padding-bottom: 10dvh;
-
 }
 
 
@@ -256,35 +255,76 @@ body {
 
 .sobre_mim .content_mim {
     width: 100%;
-    padding-top: 15dvh;
+    padding-top: 20dvh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    background-color: #FFE169;
-    height: 80dvh;
+    flex-direction: column;
+    background-size: cover;
+    height: 100dvh;
+    padding-bottom: 10dvh;
+    gap: 25px;
 }
+
+.sobre_mim .content_mim h2 {
+    font-family: 'Aboreto';
+    font-size: 5dvh;
+}
+
 
 .sobre_mim .content_mim img {
     width: 50dvh;
+}
+
+.sobre_texto {
+    width: 100%;
+    padding-top: 20dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100dvh;
     padding-bottom: 10dvh;
-
+    background-color: #D8E2DC;
 }
 
-
-.sobre_mim .main_text {
-    font-family: Aboreto;
+.sobre_texto .main_text {
+    text-align: justify;
 }
 
-.sobre_mim .main_text h2 {
-    font-family: Aboreto;
-    font-size: 5dvh;
-    text-align: left;
-}
-
-.sobre_mim .main_text p {
+.sobre_texto .main_text h4 {
     font-family: Aboreto;
     font-size: 2.5dvh;
     text-align: left;
+    text-align: center;
+}
+
+.sobre_texto .main_text p {
+    font-family: Alegreya Sans SC;
+    font-size: 3dvh;
+    text-align: left;
+}
+
+.colecao .colecao_livros {
+    width: 100%;
+    padding-top: 10dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 90dvh;
+    padding-bottom: 10dvh;
+    background-color: #99C1B9;
+}
+
+.colecao .colecao_livros h2 {
+    font-family: 'Aboreto';
+    font-size: 5dvh;
+}
+
+
+.colecao .colecao_livros img {
+    width: 70dvh;
 }
 
 /* Aqui se finaliza o home parte 1 
@@ -664,7 +704,8 @@ termina o index */
     margin-top: 4dvh;
 }
 
-.ação, .ação_sucesso {
+.ação,
+.ação_sucesso {
     padding: 1dvh 2dvh;
     border: none;
     border-radius: 5px;
