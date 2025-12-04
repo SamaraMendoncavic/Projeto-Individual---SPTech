@@ -9,11 +9,6 @@ body {
   font-family: 'Alegreya Sans SC';
 }
 
-.label-captura {
-  display: flex;
-  justify-content: center;
-}
-
 .dash-right .avaliação {
   padding-top: 20dvh;
   padding-left: 2dvh;
@@ -66,18 +61,7 @@ body {
   width: 120px;
 }
 
-.publicacao-btn-editar {
-  cursor: pointer;
-  font-family: 'Alegreya Sans SC';
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 5px 8px;
-  color: white;
-  background-color: #DF2588;
-  width: 80px;
-}
+
 
 .publicacao {
   display: flex;
@@ -163,87 +147,6 @@ body {
   background-color: #99C1B9;
 }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 450px;
-  width: 100%;
-  align-items: center;
-  color: white;
-}
-
-.card-aquario {
-  margin: 2%;
-  min-width: 40%;
-  max-width: 50%;
-  width: fit-content;
-  flex-wrap: wrap;
-  display: flex;
-  text-align: center;
-  height: 180px;
-  justify-content: right;
-  background-color: #99C1B9;
-  font-size: 20px;
-}
-
-.card-aquario h1 {
-  width: fit-content;
-}
-
-.card-aquario p {
-  margin: 0;
-  font-size: 50px;
-  font-weight: lighter;
-  text-align: left;
-}
-
-.desc-aquario {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-}
-
-.desc-aquario .cor-alerta {
-  width: 30px;
-}
-
-.title-aquario {
-  width: 100%;
-}
-
-
-.cards h1 {
-  font-size: 22px;
-  border-bottom: solid white 1px;
-  text-align: left;
-  font-weight: lighter;
-  margin: 20px;
-}
-
-.temperatura,
-.umidade {
-  margin: 5px;
-  margin-left: 20px;
-  width: 75%;
-}
-
-.cor-alerta {
-  width: 13%;
-  height: 30%;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.btns-dash {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-  flex-wrap: wrap;
-  padding: 0 30% 0 30%;
-}
 
 .graph {
   width: 70%;
@@ -257,19 +160,6 @@ body {
   justify-content: center;
 }
 
-.btn-chart {
-  font-family: 'Aboreto';
-  border: 0;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: #DF2588;
-  background-color: white;
-  margin: 5px;
-  border-radius: 3px;
-  cursor: pointer
-}
-
 .btn-pink {
   color: white;
   background-color: #DF2588;
@@ -279,22 +169,6 @@ body {
   color: #DF2588;
   background-color: white;
 
-}
-
-.label-captura {
-  height: 80px;
-}
-
-.display-none {
-  display: none;
-}
-
-.display-flex {
-  display: flex;
-}
-
-.display-block {
-  display: block;
 }
 
 canvas {
@@ -333,7 +207,6 @@ canvas {
   display: flex;
   width: 70%;
   height: fit-content;
-  /* background-color: #161618; */
   position: relative;
   top: 0;
   left: 25%;
