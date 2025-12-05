@@ -39,6 +39,7 @@ body {
 .dash-right .avaliação .div-form input {
   width: 95%;
   border-radius: 5px;
+  border: 3px solid #DF2588;
 }
 
 .dash-right .avaliação .div-form textarea {
@@ -171,10 +172,10 @@ body {
 
 }
 
-canvas {
+/* canvas {
   width: 100% !important;
   height: 100% !important;
-}
+} */
 
 /* PAGINA DOS GRÁFICOS 2023 */
 
@@ -271,7 +272,7 @@ canvas {
   color: white;
   border-radius: 10px;
   text-align: center;
-  padding: 10px 15px;
+  padding: 10px 10px;
   margin-bottom: 100px;
   cursor: pointer;
 }
