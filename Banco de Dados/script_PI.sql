@@ -1,5 +1,5 @@
-CREATE DATABASE project_Hazelwood;
-USE project_Hazelwood;
+CREATE DATABASE projeto_hazelwood;
+USE projeto_hazelwood;
 
 CREATE TABLE usuario (
     idUsuario INT PRIMARY KEY AUTO_INCREMENT,
@@ -25,21 +25,29 @@ INSERT INTO livros (nome, dt_lancamento, genero, qtd_pagina) VALUES
 ('Amor, teoricamente', '2023-01-01', 'Romance', 453),
 ('xeque-mate', '2023-01-01', 'Romance', 336);
 
-CREATE TABLE avaliacao_usuario (
-    idAvaliacao INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE comentario_usuario (
+    idComentario INT PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(100),
     descricao VARCHAR(255),
-    dt_avaliacao DATETIME DEFAULT CURRENT_TIMESTAMP, 
+    dt_comentario DATETIME DEFAULT CURRENT_TIMESTAMP, 
     fk_usuario INT,
-    FOREIGN KEY (fk_usuario) REFERENCES usuario(idUsuario),
+    FOREIGN KEY (fk_usuario) REFERENCES usuario(idUsuario)
 );
+
 
 SELECT * FROM usuario;
 
-SELECT * FROM avaliacao_usuario;
+SELECT * FROM comentario_usuario;
 
-SELECT DATE_FORMAT(dt_avaliacao, '%Y-%m-%d') AS data_comentario,
-       COUNT(idAvaliacao) AS total_comentarios
-       FROM avaliacao_usuario
+SELECT DATE_FORMAT(dt_comentario, '%d-%m-%Y') AS data_comentario,
+       COUNT(idComentario) AS total_comentarios
+       FROM comentario_usuario
        GROUP BY data_comentario
-       ORDER BY data_comentario;
+       ORDER BY data_comentario ASC;
+                
+SELECT COUNT(idComentario) AS total_comentarios
+       FROM comentario_usuario;
+       
+SELECT ROUND(AVG(TIMESTAMPDIFF(YEAR, dtNasc, CURDATE())),0) AS Idade_Usuarios
+           FROM usuario;
+       

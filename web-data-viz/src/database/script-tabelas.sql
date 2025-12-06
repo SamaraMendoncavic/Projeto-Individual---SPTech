@@ -1,10 +1,5 @@
-
-/*
-comandos para mysql server
-*/
-
-CREATE DATABASE project_Hazelwood;
-USE project_Hazelwood;
+CREATE DATABASE projeto_hazelwood;
+USE projeto_hazelwood;
 
 CREATE TABLE usuario (
     idUsuario INT PRIMARY KEY AUTO_INCREMENT,
@@ -30,14 +25,29 @@ INSERT INTO livros (nome, dt_lancamento, genero, qtd_pagina) VALUES
 ('Amor, teoricamente', '2023-01-01', 'Romance', 453),
 ('xeque-mate', '2023-01-01', 'Romance', 336);
 
-CREATE TABLE avaliacao_usuario (
-    id_Avaliacao INT,
-    id_Livros INT, 
-    id_usuario INT,
-    comentario VARCHAR(100),
-    CONSTRAINT pkComposta PRIMARY KEY (id_Avaliacao, id_Livros, id_usuario),
-    CONSTRAINT livro_avaliacao FOREIGN KEY (id_Livros) REFERENCES livros(idLivros),
-    CONSTRAINT usuario_avaliacao FOREIGN KEY (id_usuario) REFERENCES usuario(idUsuario)
+CREATE TABLE comentario_usuario (
+    idComentario INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(100),
+    descricao VARCHAR(255),
+    dt_comentario DATETIME DEFAULT CURRENT_TIMESTAMP, 
+    fk_usuario INT,
+    FOREIGN KEY (fk_usuario) REFERENCES usuario(idUsuario)
 );
 
+
 SELECT * FROM usuario;
+
+SELECT * FROM comentario_usuario;
+
+SELECT DATE_FORMAT(dt_comentario, '%d-%m-%Y') AS data_comentario,
+       COUNT(idComentario) AS total_comentarios
+       FROM comentario_usuario
+       GROUP BY data_comentario
+       ORDER BY data_comentario ASC;
+                
+SELECT COUNT(idComentario) AS total_comentarios
+       FROM comentario_usuario;
+       
+SELECT ROUND(AVG(TIMESTAMPDIFF(YEAR, dtNasc, CURDATE())),0) AS Idade_Usuarios
+           FROM usuario;
+       
